@@ -30,7 +30,7 @@ body {
   top: 0;
 }
 
-.container > div {
+.container>div {
   position: absolute;
   left: 0;
   right: 0;
@@ -41,7 +41,7 @@ body {
   font-size: 4.5rem;
 }
 
-.one > img {
+.one>img {
   vertical-align: middle;
   margin-bottom: 10px;
   max-width: 100%;
@@ -198,6 +198,52 @@ body {
   fill: #e3bae8;
 }
 
+#music-btn {
+  display: block;
+  margin: 2.5em auto 0 auto;
+  font-size: 1.5rem;
+  padding: 0.75em 2.5em;
+  position: relative;
+  z-index: 20;
+  cursor: pointer;
+  background: linear-gradient(90deg, #ffb347 60%, #ff6f91 100%);
+  /* Degradado cálido y festivo */
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 24px 0 rgba(255, 111, 145, 0.18);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transform: translateY(300px);
+}
+
+#music-btn:hover,
+#music-btn:focus {
+  background: linear-gradient(90deg, #2b7a6b 60%, #5ebd8b 100%);
+  transform: scale(1.05);
+  box-shadow: 0 6px 32px 0 rgba(52, 157, 139, 0.22);
+  outline: none;
+}
+
+@media (max-width: 700px) {
+  #music-btn {
+    font-size: 1.1rem;
+    padding: 0.6em 1.5em;
+    border-radius: 20px;
+    margin-top: 2em;
+  }
+}
+
+@media (max-width: 500px) {
+  #music-btn {
+    font-size: 1rem;
+    padding: 0.5em 1em;
+    border-radius: 15px;
+    margin-top: 1.5em;
+  }
+}
+
 .eight svg:nth-child(8) {
   top: 86vh;
   left: 37vw;
@@ -211,7 +257,7 @@ body {
 }
 
 .wish-hbd {
-  font-size: 3em;
+  font-size: 2.5em;
   margin: 0;
   text-transform: uppercase;
 }
@@ -285,11 +331,11 @@ body {
   }
 
   .wish-hbd {
-    font-size: 2.2em;
+    font-size: 2em;
   }
 
   .wish h5 {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 
   .nine p {

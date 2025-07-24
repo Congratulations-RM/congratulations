@@ -1,4 +1,6 @@
 
+const song = new Audio("audio/song.mp3");
+let songStarted = false;
 // Animation Timeline
 const animationTimeline = () => {
   // Spit chars that needs to be animated individually
@@ -158,6 +160,7 @@ const animationTimeline = () => {
       },
       0.2
     )
+    .addPause("+=0", showMusicButton)
     .staggerTo(
       ".idea-6 span",
       0.8,
@@ -269,7 +272,20 @@ const animationTimeline = () => {
 
   // tl.seek("currentStep");
   // tl.timeScale(2);
-
+  function showMusicButton() {
+    const btn = document.getElementById("music-btn");
+    btn.style.display = "block";
+    btn.onclick = function () {
+      btn.style.display = "none";
+      if (!songStarted) {
+        song.play().catch(() => { });
+        songStarted = true;
+      }
+      tl.play();
+    };
+    // Pausa el timeline hasta que se haga clic
+    tl.pause();
+  }
   // Restart Animation on click
   const replyBtn = document.getElementById("replay");
   replyBtn.addEventListener("click", () => {
@@ -277,24 +293,10 @@ const animationTimeline = () => {
   });
 };
 
-const song = new Audio("audio/song.mp3");
-let songStarted = false;
 
-// Nuevo: función para iniciar todo
-function startCelebration() {
-  if (!songStarted) {
-    song.play().catch(err => {
-      console.log("No se pudo reproducir el audio:", err);
-    });
-    songStarted = true;
-  }
-  document.querySelector('.container').style.visibility = 'visible';
-  document.getElementById('start-btn').style.display = 'none';
-  animationTimeline();
-}
+animationTimeline();
+
 
 // Espera al click en el botón de inicio
-document.getElementById('start-btn').addEventListener('click', startCelebration);
-
 
 
