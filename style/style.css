@@ -218,14 +218,6 @@ body {
   transform: translateY(300px);
 }
 
-#music-btn:hover,
-#music-btn:focus {
-  background: linear-gradient(90deg, #2b7a6b 60%, #5ebd8b 100%);
-  transform: scale(1.05);
-  box-shadow: 0 6px 32px 0 rgba(52, 157, 139, 0.22);
-  outline: none;
-}
-
 @media (max-width: 700px) {
   #music-btn {
     font-size: 1.1rem;
