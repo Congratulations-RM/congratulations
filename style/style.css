@@ -250,14 +250,14 @@ body {
 }
 
 .wish-hbd {
-  font-size: 2em;
+  font-size: 1em;
   margin: 0;
   text-transform: uppercase;
 }
 
 .wish h5 {
   font-weight: lighter;
-  font-size: 2rem;
+  font-size: 1rem;
   margin: 10px 0 0;
 }
 
@@ -324,7 +324,7 @@ body {
   }
 
   .wish-hbd {
-    font-size: 2em;
+    font-size: 1em;
   }
 
   .wish h5 {
